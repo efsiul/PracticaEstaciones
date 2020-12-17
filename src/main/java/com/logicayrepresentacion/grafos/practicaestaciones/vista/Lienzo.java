@@ -234,9 +234,7 @@ public class Lienzo extends javax.swing.JPanel {
         datosEstacion.getGrafo().imprimirConjuntoVertices();
         datosEstacion.getGrafo().imprimirSpanningTree();
         repaint();
-        
-        
-
+       
     }//GEN-LAST:event_formMouseClicked
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased

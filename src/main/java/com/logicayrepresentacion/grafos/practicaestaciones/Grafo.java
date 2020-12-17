@@ -118,7 +118,6 @@ public class Grafo {
         return matrizCostos;
     }
 
-
     public void imprimirCostos() {
         String mat = "";
         for (int l = 0; l < matrizCostos.length; l++) {
@@ -171,41 +170,49 @@ public class Grafo {
         
         conjuntoSpanningTree = new ArrayList();
         ImprimirConjuntoMayor();
-        
-        
-        while(!conjuntoMayor.isEmpty()){
+        int indice=0;
+        while (indice < numeroVertices-1) {
             int u = conjuntoMayor.get(0).getSubconjunto().get(0);
             int w = conjuntoMayor.get(0).getSubconjunto().get(1);
             conjuntoMayor.remove(0);
+
             
-            for (int i = 0; i < vertices.size(); i++) {
-                if(vertices.get(i).getSubVertices().contains(u) && !vertices.get(i).getSubVertices().contains(w)){
-                    Subconjunto sbcjnto = new Subconjunto();
-                    sbcjnto.addVertice(u);
-                    sbcjnto.addVertice(w);
-                    conjuntoSpanningTree.add(sbcjnto);
-                    for (int j = 0; j < vertices.size(); j++) {
-                        if(vertices.get(i).getSubVertices().contains(w) && j != 0){                            
-                            vertices.get(j).RemoveVertice(w);
-                            vertices.get(0).AddVertices(w);
-                        }
-                        
-                       
-                    }
-                    if(i != 0){
-                            vertices.get(i).RemoveVertice(u);
-                            vertices.get(0).AddVertices(u);
-                            
-                            
-                        }                                                                                
+
+            int dondeEstaU = 0;
+            for (dondeEstaU = 0; dondeEstaU < vertices.size(); dondeEstaU++) {
+                if (vertices.get(dondeEstaU).getSubVertices().contains(u)) {
+                    break;
+                }
+            }
+
+            int dondeEstaW = 0;
+            for (dondeEstaW = 0; dondeEstaW < vertices.size(); dondeEstaW++) {
+                if (vertices.get(dondeEstaW).getSubVertices().contains(w)) {
+                    break;
+                }
+            }
+
+            
+            if (dondeEstaU != dondeEstaW) {
+                Subconjunto sbcjnto = new Subconjunto();
+                sbcjnto.addVertice(u);
+                sbcjnto.addVertice(w);
+                conjuntoSpanningTree.add(sbcjnto);
+                    
+                Vertices conjuntoU = vertices.get(dondeEstaU);
+                
+                for ( int vw : vertices.get(dondeEstaW).subVertices) {
+                    conjuntoU.AddVertices(vw);
                 }
                 
+                vertices.remove(dondeEstaW);
+                indice++;
             }
-        
+
         }
         System.out.println("--------------------CONJUNTO SPANNING TREE---------------------");
         for (int i = 0; i < conjuntoSpanningTree.size(); i++) {
-            System.out.println("("+conjuntoSpanningTree.get(i).getSubconjunto().get(0)+","+conjuntoSpanningTree.get(i).getSubconjunto().get(1));            
+            System.out.println("(" + conjuntoSpanningTree.get(i).getSubconjunto().get(0) + "," + conjuntoSpanningTree.get(i).getSubconjunto().get(1));
         }
         return conjuntoSpanningTree;
     }
@@ -217,20 +224,18 @@ public class Grafo {
 
         }
     }
-    
-    public void ImprimirConjuntoMayor(){
+
+    public void ImprimirConjuntoMayor() {
         for (int i = 0; i < conjuntoMayor.size(); i++) {
             System.out.println("CONJUNTO MAYOR ES " + conjuntoMayor.get(i));
-            
+
         }
     }
-        
-    public void imprimirConjuntoVertices(){
+
+    public void imprimirConjuntoVertices() {
         for (int i = 0; i < vertices.size(); i++) {
             System.out.println("VERTICES" + vertices.get(i));
         }
-    }    
- 
-    
+    }
 
 }
