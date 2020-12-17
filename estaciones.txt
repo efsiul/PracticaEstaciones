@@ -1,0 +1,13 @@
+10
+Madera,Bello,5
+Bello,Niquia,3
+Niquia,America,15
+America,Poblado,10
+Poblado,Bello,13
+Alpujarra,Niquia,8
+Arvi,Alpujarra,40
+Floresta,Cisneros,25
+Bello,Arvi,15
+Cisneros,Madera,5
+Sabaneta,Poblado,15
+Cisneros,Sabaneta,13

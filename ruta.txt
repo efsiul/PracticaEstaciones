@@ -1,0 +1,16 @@
+13
+rosal,estrella,5
+bello,niquia,7
+san javier,universidad,12
+acevedo,industriales,15
+caribe,suramericana,20
+niquia,industriales,9
+suramericana,bello,16
+rosal,san javier,8
+industriales,bello,4
+estrella,industriales,10
+industriales,suramericana,13
+beto,acevedo,5
+kill,rosal,8
+gato,rosal,16
+gato,acevedo,78

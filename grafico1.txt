@@ -1,0 +1,13 @@
+rosal,102.0,121.0
+estrella,388.0,135.0
+bello,525.0,388.0
+niquia,530.0,246.0
+san javier,482.0,54.0
+universidad,175.0,35.0
+acevedo,24.0,399.0
+industriales,292.0,240.0
+caribe,282.0,496.0
+suramericana,289.0,407.0
+beto,94.0,486.0
+kill,167.0,219.0
+gato,41.0,267.0
